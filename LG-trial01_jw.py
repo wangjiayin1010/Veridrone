@@ -25,12 +25,12 @@ y = data[:, 2]
 
 # In[16]:
 
-from sklearn import linear_model
+from sklearn import svm
 
 
 # In[17]:
 
-clf = linear_model.LogisticRegression(C=300)
+clf = svm.SVC(C=30000)
 
 
 # In[18]:

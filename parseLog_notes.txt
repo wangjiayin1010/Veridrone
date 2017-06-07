@@ -1,0 +1,25 @@
+/* Below are steps of how to parse log files and output to .csv files */
+
+1. Get individual files for roll, pitch, yaw, gcrs from .log files, using
+parser_getLine.
+
+  >> python parser_getLine.py GPS gcrs --outputfile=gcrs_dirXX
+  OR
+  >> python parser_getLine.py ATT roll --outputfile=roll_dirXX
+
+
+2. Extract only every other line from roll, pitch, yaw files because they 
+are twice as long as gcrs files.
+
+  >> python every_other_line.py roll_original roll_new
+
+
+3. Parse the new roll, pitch, yaw and original gcrs using parser_dir, and
+output the columns into a .csv file.
+
+  >> python parser_dir roll_new pitch_new yaw_new gcrs_original output.csv
+
+
+
+
+
